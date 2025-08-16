@@ -24354,7 +24354,7 @@ SDL_UserEvent :: struct {
 * \since This struct is available since SDL 3.2.0.
 */
 SDL_Event :: union {
-    type:            Uint32; /**< Event type, shared with all events, Uint32 to cover user events which are not in the SDL_EventType enumeration */
+    type:            SDL_EventType; /**< Event type, shared with all events, Uint32 to cover user events which are not in the SDL_EventType enumeration */
     common:          SDL_CommonEvent; /**< Common event data */
     display:         SDL_DisplayEvent; /**< Display event data */
     window:          SDL_WindowEvent; /**< Window event data */
