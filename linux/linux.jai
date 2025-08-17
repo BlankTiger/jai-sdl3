@@ -31203,7 +31203,7 @@ SDL_SetLogPriorities :: (priority: SDL_LogPriority) -> void #foreign libsdl3;
 * \sa SDL_ResetLogPriorities
 * \sa SDL_SetLogPriorities
 */
-SDL_SetLogPriority :: (category: s32, priority: SDL_LogPriority) -> void #foreign libsdl3;
+SDL_SetLogPriority :: (category: SDL_LogCategory, priority: SDL_LogPriority) -> void #foreign libsdl3;
 
 /**
 * Get the priority of a particular log category.
