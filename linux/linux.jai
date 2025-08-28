@@ -675,14 +675,6 @@ SDL_GPU_BUFFERUSAGE_GRAPHICS_STORAGE_READ :: 1 << 3;
 SDL_GPU_BUFFERUSAGE_COMPUTE_STORAGE_READ :: 1 << 4;
 SDL_GPU_BUFFERUSAGE_COMPUTE_STORAGE_WRITE :: 1 << 5;
 
-SDL_GPU_SHADERFORMAT_INVALID :: 0;
-SDL_GPU_SHADERFORMAT_PRIVATE :: 1 << 0;
-SDL_GPU_SHADERFORMAT_SPIRV :: 1 << 1;
-SDL_GPU_SHADERFORMAT_DXBC :: 1 << 2;
-SDL_GPU_SHADERFORMAT_DXIL :: 1 << 3;
-SDL_GPU_SHADERFORMAT_MSL :: 1 << 4;
-SDL_GPU_SHADERFORMAT_METALLIB :: 1 << 5;
-
 SDL_GPU_COLORCOMPONENT_R :: 1 << 0;
 SDL_GPU_COLORCOMPONENT_G :: 1 << 1;
 SDL_GPU_COLORCOMPONENT_B :: 1 << 2;
@@ -25973,7 +25965,15 @@ SDL_GPUShaderStage :: enum u32 {
 *
 * \sa SDL_CreateGPUShader
 */
-SDL_GPUShaderFormat :: Uint32;
+SDL_GPUShaderFormat :: enum_flags u32 {
+    INVALID  :: 0;
+    PRIVATE  :: 1 << 0;
+    SPIRV    :: 1 << 1;
+    DXBC     :: 1 << 2;
+    DXIL     :: 1 << 3;
+    MSL      :: 1 << 4;
+    METALLIB :: 1 << 5;
+}
 
 /**
 * Specifies the format of a vertex attribute.
