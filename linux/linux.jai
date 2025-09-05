@@ -31558,7 +31558,7 @@ SDL_LogMessage :: (category: s32, priority: SDL_LogPriority, fmt: string, __args
 *
 * \since This datatype is available since SDL 3.2.0.
 */
-SDL_LogOutputFunction :: #type (userdata: *void, category: s32, priority: SDL_LogPriority, message: *u8) -> void #c_call;
+SDL_LogOutputFunction :: #type (userdata: *void, category: SDL_LogCategory, priority: SDL_LogPriority, message: *u8) -> void #c_call;
 
 /**
 * Get the default log output function.
