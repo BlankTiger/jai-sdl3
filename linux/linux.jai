@@ -31372,8 +31372,8 @@ SDL_LogVerbose :: (category: s32, fmt: string, __args: ..Any) {
 * \sa SDL_LogVerbose
 * \sa SDL_LogWarn
 */
-SDL_LogDebug_CFormat :: (category: s32, fmt: *u8, __args: ..Any) -> void #foreign libsdl3 "SDL_LogDebug";
-SDL_LogDebug :: (category: s32, fmt: string, __args: ..Any) {
+SDL_LogDebug_CFormat :: (category: SDL_LogCategory, fmt: *u8, __args: ..Any) -> void #foreign libsdl3 "SDL_LogDebug";
+SDL_LogDebug :: (category: SDL_LogCategory, fmt: string, __args: ..Any) {
     push_allocator(temp);
     formatted_text_builder: String_Builder;
     print_to_builder(*formatted_text_builder, fmt, ..__args);
