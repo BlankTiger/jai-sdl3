@@ -1242,15 +1242,6 @@ SDL_HINT_PEN_MOUSE_EVENTS :: "SDL_PEN_MOUSE_EVENTS";
 
 SDL_HINT_PEN_TOUCH_EVENTS :: "SDL_PEN_TOUCH_EVENTS";
 
-SDL_INIT_AUDIO :: 0x00000010;
-SDL_INIT_VIDEO :: 0x00000020;
-SDL_INIT_JOYSTICK :: 0x00000200;
-SDL_INIT_HAPTIC :: 0x00001000;
-SDL_INIT_GAMEPAD :: 0x00002000;
-SDL_INIT_EVENTS :: 0x00004000;
-SDL_INIT_SENSOR :: 0x00008000;
-SDL_INIT_CAMERA :: 0x00010000;
-
 SDL_PROP_APP_METADATA_NAME_STRING :: "SDL.app.metadata.name";
 SDL_PROP_APP_METADATA_VERSION_STRING :: "SDL.app.metadata.version";
 SDL_PROP_APP_METADATA_IDENTIFIER_STRING :: "SDL.app.metadata.identifier";
@@ -30571,7 +30562,16 @@ SDL_RemoveHintCallback :: (name: *u8, callback: SDL_HintCallback, userdata: *voi
 * \sa SDL_QuitSubSystem
 * \sa SDL_WasInit
 */
-SDL_InitFlags :: Uint32;
+SDL_InitFlags :: enum_flags u32 {
+    AUDIO    :: 0x00000010;
+    VIDEO    :: 0x00000020;
+    JOYSTICK :: 0x00000200;
+    HAPTIC   :: 0x00001000;
+    GAMEPAD  :: 0x00002000;
+    EVENTS   :: 0x00004000;
+    SENSOR   :: 0x00008000;
+    CAMERA   :: 0x00010000;
+}
 
 /**
 * Return values for optional main callbacks.
