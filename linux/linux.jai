@@ -865,12 +865,6 @@ SDL_PROP_TEXTINPUT_AUTOCORRECT_BOOLEAN :: "SDL.textinput.autocorrect";
 SDL_PROP_TEXTINPUT_MULTILINE_BOOLEAN :: "SDL.textinput.multiline";
 SDL_PROP_TEXTINPUT_ANDROID_INPUTTYPE_NUMBER :: "SDL.textinput.android.inputtype";
 
-SDL_BUTTON_LEFT :: 1;
-SDL_BUTTON_MIDDLE :: 2;
-SDL_BUTTON_RIGHT :: 3;
-SDL_BUTTON_X1 :: 4;
-SDL_BUTTON_X2 :: 5;
-
 SDL_TOUCH_MOUSEID :: cast,trunc(MouseID) -1;
 
 SDL_MOUSE_TOUCHID :: cast,trunc(TouchID) -1;
@@ -21503,7 +21497,13 @@ MouseWheelDirection :: enum u32 {
 * \sa SDL_GetGlobalMouseState
 * \sa SDL_GetRelativeMouseState
 */
-MouseButtonFlags :: Uint32;
+MouseButtonFlags :: enum_flags u32 {
+    LEFT   :: 1;
+    MIDDLE :: 2;
+    RIGHT  :: 3;
+    X1     :: 4;
+    X2     :: 5;
+}
 
 /**
 * Return whether a mouse is currently connected.

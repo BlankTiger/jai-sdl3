@@ -198,6 +198,13 @@ DECLARATIONS_TO_OMIT :: string.[
 
     "SDL_Event",
 
+    "SDL_MouseButtonFlags",
+    "SDL_BUTTON_LEFT",
+    "SDL_BUTTON_MIDDLE",
+    "SDL_BUTTON_RIGHT",
+    "SDL_BUTTON_X1",
+    "SDL_BUTTON_X2",
+
     "SDL_abs",
     "SDL_isnan",
     "SDL_isinf",
@@ -224,6 +231,29 @@ The header contains things not yet supported by bindings generator like the SDL_
 These should rarely changed, but last checked for SDL 3.2.14
 */
 HEADER :: #string EOF
+
+/**
+* A bitmask of pressed mouse buttons, as reported by SDL_GetMouseState, etc.
+*
+* - Button 1: Left mouse button
+* - Button 2: Middle mouse button
+* - Button 3: Right mouse button
+* - Button 4: Side mouse button 1
+* - Button 5: Side mouse button 2
+*
+* \since This datatype is available since SDL 3.2.0.
+*
+* \sa SDL_GetMouseState
+* \sa SDL_GetGlobalMouseState
+* \sa SDL_GetRelativeMouseState
+*/
+MouseButtonFlags :: enum_flags u32 {
+    LEFT   :: 1;
+    MIDDLE :: 2;
+    RIGHT  :: 3;
+    X1     :: 4;
+    X2     :: 5;
+}
 
 /**
 * The structure for all events in SDL.
